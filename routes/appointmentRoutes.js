@@ -3,11 +3,11 @@ const express = require('express');
 const router = express.Router();
 /*const authMiddleware = require('../middlewares/authMiddleware');*/
 const {
-  createAppointment,
-  getAppointments,
-  cancelAppointment
-} = require('../controllers/appointmentController');
-
+    createAppointment,
+    getAppointments,
+    cancelAppointment
+  } = require('../controllers/appointmentController');
+  
 // Créer un rendez-vous (route protégée)
 router.post('/appointments', createAppointment);
 
