@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const User = require('./models/user');
 const jwt = require('jsonwebtoken');
+const appointmentRoutes = require('./routes/appointmentRoutes');
 
 // Charger les variables d'environnement
 dotenv.config();
@@ -111,6 +112,8 @@ app.get('/api/users', async (req, res) => {
       res.status(500).json({ message: 'Erreur lors de la suppression de l\'utilisateur' });
     }
   });
+  app.use('/api', appointmentRoutes); // Ajoutez cette ligne pour gérer les rendez-vous
+
 
 // Lancer le serveur
 const PORT = process.env.PORT || 5000;
